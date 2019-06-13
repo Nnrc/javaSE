@@ -1,5 +1,8 @@
 package com.gy.node;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @ClassName : NodeFunction
  * @Auther : gy
@@ -13,8 +16,9 @@ public class NodeFunction {
         Node node = new Node(1);
         node.addData(2);
         node.addData(3);
-        node.insert(3,0);
+        node.insert(2,0);
         node.traverse();
+
     }
 
 }

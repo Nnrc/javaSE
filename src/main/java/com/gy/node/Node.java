@@ -6,7 +6,7 @@ package com.gy.node;
  * @Date : 2019/6/12 14:50
  * @Description :   链表节点
  */
-public class Node {
+public class Node implements Cloneable{
     //数据域
     public Object data;
     //下一个指针节点
@@ -14,7 +14,10 @@ public class Node {
 
     public Node() {
     }
-
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
+    }
     public Node(Object data) {
         this.data = data;
     }
@@ -86,8 +89,7 @@ public class Node {
                     return ;
                 }   else if (index == 0){
                     //处于链表首位
-
-                    //这一步有问题
+                    //clone当前对象
                     Node clone=null;
                     try {
                         clone = (Node) temp.clone();
@@ -101,7 +103,14 @@ public class Node {
                 currentPos++;
             }
     }
-
+    /**
+     * @Title :获取链表长度
+     * @Author : gy
+     * @Description : //TODO 
+     * @Date : 2019/6/13 14:32
+     * @Param : []
+     * @return : int
+     **/
     public int  nodeLength(){
         int size=1;
         Node temp=this;
