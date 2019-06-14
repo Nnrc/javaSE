@@ -120,4 +120,30 @@ public class Node implements Cloneable{
         }
         return size;
     }
+
+
+    public void delete(int index){
+        if(index<0||index>nodeLength()-1){
+            System.out.println("删除下标不正确");
+            return;
+        }
+        int currentPos=0;
+        Node temp=this;
+        while (temp != null){
+            //找到上个节点
+            if (currentPos== (index-1)) {
+                //插入节点的下一个为当前节点
+                Node right=temp.next.next;
+                //上一个节点
+                temp.next=right;
+                return ;
+            }  else if (index == 0) {
+                this.data=temp.next.data;
+                this.next=temp.next.next;
+                return ;
+            }
+            temp=temp.next;
+            currentPos++;
+        }
+    }
 }
