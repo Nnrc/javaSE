@@ -100,7 +100,7 @@ public class Queue {
         if (!isEmpty()) {
             //不为空才出队
             int value = this.arrays[this.front];
-            System.out.println("出队的元素是：" + value);
+            System.out.println("出队的元素是：" +  value);
             // front指针往后面移
             this.front = (this.front + 1) % this.arrays.length;
 
